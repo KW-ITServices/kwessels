@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Azure Troubleshooting Cue Cards — 14 Issues</title>
+    <link rel="stylesheet" href="cheatsheet.css" />
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="logo">AZ</div>
+        <div>
+          <h1>Azure Troubleshooting Cue Cards — Common Issues</h1>
+          <p>
+            Compact study guide with quick steps, ITIL & Agile notes, and a
+            printable cram sheet.
+          </p>
+        </div>
+      </header>
+
+      <div class="grid">
+        <main>
+          <!-- CARD TEMPLATE EXAMPLE:
+        <details class="card">
+          <summary>
+            <div class="arrow"></div>
+            <div>Question</div>
+          </summary>
+          <div class="answer">...</div>
+        </details>
+        -->
+
+          <!-- 1 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>
+                1. What is Azure Active Directory, and how does it differ from
+                on-premises AD?
+              </div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>
+                  Azure AD is a cloud-based identity and access management
+                  service.
+                </li>
+                <li>
+                  On-prem AD manages devices and users locally using domain
+                  join, GPO, Kerberos.
+                </li>
+                <li>
+                  Azure AD supports SSO, MFA, Conditional Access, identity
+                  governance.
+                </li>
+              </ol>
+              <div class="tagline">
+                <span class="chip"
+                  >ITIL: Identity impacts availability & access</span
+                >
+                <span class="chip">Agile: iterative policy rollouts</span>
+              </div>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 2 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>2. How do you troubleshoot login issues in Azure AD?</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>
+                  Check user state: active, not blocked, password validity.
+                </li>
+                <li>
+                  Use sign-in logs to identify authentication or MFA failures.
+                </li>
+                <li>Review Conditional Access policy assignments.</li>
+                <li>Validate device compliance in Intune.</li>
+                <li>Check Azure AD Connect for sync errors.</li>
+                <li>Document and communicate resolution.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 3 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>
+                3. Explain Azure Resource Groups and why they are important
+              </div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Logical containers for Azure resources.</li>
+                <li>Enable RBAC, lifecycle control, cost management.</li>
+                <li>Support tagging, automation, structured deployments.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 4 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>4. How do you monitor Azure resources effectively?</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Azure Monitor dashboards and alerts.</li>
+                <li>Log Analytics for logs & trend analysis.</li>
+                <li>Application Insights for app telemetry.</li>
+                <li>Network Watcher for flow & connectivity monitoring.</li>
+                <li>Integrate alerts with ITSM for automated incidents.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 5 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>5. Troubleshooting a failing Azure VM</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Check VM state (Running/Stopped).</li>
+                <li>Check Boot Diagnostics for errors.</li>
+                <li>Review CPU, RAM, IOPS metrics.</li>
+                <li>Check NSG/firewall/IP config.</li>
+                <li>RDP/SSH and inspect OS logs.</li>
+                <li>Redeploy or restore from snapshot if needed.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 6 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>6. Implement Azure RBAC</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Identify least-privilege role needed.</li>
+                <li>Assign at correct scope (sub/resource group/resource).</li>
+                <li>Use groups, avoid individual assignments.</li>
+                <li>Test permissions.</li>
+                <li>Review regularly for stale permissions.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 7 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>7. Troubleshoot Azure Storage issues</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Check storage health and service status.</li>
+                <li>Validate firewall/VNet/private endpoints.</li>
+                <li>Verify keys/SAS/RBAC permissions.</li>
+                <li>Check for throttling/quota limits.</li>
+                <li>Test across clients & review logs.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 8 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>8. Troubleshoot Azure Backup failures</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Check Recovery Services Vault job status.</li>
+                <li>Review backup logs and error codes.</li>
+                <li>Validate storage and network connectivity.</li>
+                <li>Test restore to confirm integrity.</li>
+                <li>Adjust retention or schedule if needed.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 9 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>9. Troubleshoot Azure Networking</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Check IP, VNet, NSG, UDR configuration.</li>
+                <li>Use Network Watcher tools.</li>
+                <li>Ping/tracert + flow logs.</li>
+                <li>Fix misconfigured rules or routes.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 10 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>10. Troubleshoot hybrid Azure AD sync issues</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Check Azure AD Connect health & sync service.</li>
+                <li>Identify missing/duplicate attributes.</li>
+                <li>Fix AD objects or filtering.</li>
+                <li>Re-run sync and confirm.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 11 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>11. Troubleshoot Conditional Access / MFA issues</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Identify impacted apps/users.</li>
+                <li>Review sign-in logs for policy blocks.</li>
+                <li>Verify device compliance.</li>
+                <li>Reset MFA or adjust policy.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 12 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>12. Troubleshoot VM performance issues</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Review CPU/RAM/IOPS metrics.</li>
+                <li>Inspect OS resource usage.</li>
+                <li>Optimize apps & disk.</li>
+                <li>Scale VM size if necessary.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 13 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>13. Troubleshoot Azure SQL connectivity</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Check DB/server status.</li>
+                <li>Validate firewall/VNet rules.</li>
+                <li>Test from SSMS/Azure Data Studio.</li>
+                <li>Fix routing/IP/credentials issues.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 14 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>14. Prevent Azure outages proactively</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Build dashboards & automated alerting.</li>
+                <li>Implement redundancy & geo-replication.</li>
+                <li>Review RBAC and policies regularly.</li>
+                <li>Test backups + DR plans.</li>
+                <li>Perform post-mortems and improve runbooks.</li>
+              </ol>
+            </div>
+          </details>
+        </main>
+
+
+
+    </div>
+
+    <!-- RMM 1: Managing and Tuning Alerts -->
+    <details class="card">
+      <summary>
+        <div class="arrow"></div>
+        <div>
+          RMM 1. How do you manage, tune, and optimize RMM alerts to reduce
+          noise?
+        </div>
+      </summary>
+      <div class="answer">
+        <ol>
+          <li>
+            Identify high-volume alerts and categorize by severity (Critical,
+            Warning, Informational).
+          </li>
+          <li>
+            Adjust thresholds (CPU/memory/disk/latency) to reflect real-world
+            patterns.
+          </li>
+          <li>
+            Suppress non-actionable alerts and convert them into informational
+            reports.
+          </li>
+          <li>
+            Create alert dependencies (e.g., suppress server alerts during
+            maintenance windows).
+          </li>
+          <li>
+            Implement automated self-heal scripts (restart services, clear
+            caches, reboot stuck agents).
+          </li>
+          <li>
+            Document alert definitions and create standardized alert templates
+            per client.
+          </li>
+        </ol>
+        <div class="tagline">
+          <span class="chip">Goal: signal > noise</span>
+          <span class="chip">Lean: remove non-value steps</span>
+        </div>
+      </div>
+    </details>
+
+    <hr class="soft" />
+
+    <!-- RMM 2: Patch Management -->
+    <details class="card">
+      <summary>
+        <div class="arrow"></div>
+        <div>
+          RMM 2. Explain your approach to patch management across multiple
+          clients
+        </div>
+      </summary>
+      <div class="answer">
+        <ol>
+          <li>Segment devices by OS, department, and business impact.</li>
+          <li>Create staggered patch windows to reduce simultaneous impact.</li>
+          <li>Test critical patches in controlled pilot groups first.</li>
+          <li>Review vendor advisories for high-risk vulnerabilities.</li>
+          <li>
+            Use RMM automation to enforce reboots, verify install, and generate
+            compliance reports.
+          </li>
+          <li>Document exceptions and remediation timelines.</li>
+        </ol>
+        <div class="tagline">
+          <span class="chip">ITIL: Change mgmt for high-risk patches</span>
+          <span class="chip">Security: CVE mitigation</span>
+        </div>
+      </div>
+    </details>
+
+    <hr class="soft" />
+
+    <!-- RMM 3: Proactive Monitoring Strategy -->
+    <details class="card">
+      <summary>
+        <div class="arrow"></div>
+        <div>RMM 3. How do you build a proactive monitoring strategy?</div>
+      </summary>
+      <div class="answer">
+        <ol>
+          <li>
+            Implement baseline monitors: CPU, RAM, disk, processes, services,
+            event logs, AV, backups.
+          </li>
+          <li>
+            Add custom monitors for client-specific apps (databases, ERP,
+            point-of-sale, etc.).
+          </li>
+          <li>Configure uptime/heartbeat monitoring and recovery scripts.</li>
+          <li>
+            Integrate RMM → PSA ticketing for automated incident creation.
+          </li>
+          <li>
+            Set up monthly health reports and automatic remediation tasks.
+          </li>
+        </ol>
+        <div class="tagline">
+          <span class="chip">Goal: detect before users notice</span>
+          <span class="chip">Proactive > reactive</span>
+        </div>
+      </div>
+    </details>
+
+    <hr class="soft" />
+
+    <!-- RMM 4: Automation and Scripting -->
+    <details class="card">
+      <summary>
+        <div class="arrow"></div>
+        <div>
+          RMM 4. Give examples of automation scripts you’ve deployed in an MSP
+          environment
+        </div>
+      </summary>
+      <div class="answer">
+        <ol>
+          <li>Automated service restarts for stuck Windows services.</li>
+          <li>Temp file cleanup, log rotation, cache clearing.</li>
+          <li>Automated AD password expiry notifications.</li>
+          <li>Printer spooler repair scripts.</li>
+          <li>Patch retry workflows for failed updates.</li>
+          <li>Disk space remediation (cleanup → alert → escalate).</li>
+        </ol>
+        <div class="tagline">
+          <span class="chip">PowerShell mastery = MSP efficiency</span>
+        </div>
+      </div>
+    </details>
+
+    <!-- M365 1: Exchange Online Mail Flow Troubleshooting -->
+    <details class="card">
+      <summary>
+        <div class="arrow"></div>
+        <div>
+          M365 1. How do you troubleshoot Exchange Online mail flow failures?
+        </div>
+      </summary>
+      <div class="answer">
+        <ol>
+          <li>Check Message Trace for delivery status codes.</li>
+          <li>Verify SPF, DKIM, DMARC records.</li>
+          <li>Review transport rules & spam filtering policies.</li>
+          <li>Inspect mailbox forwarding, delegates, or blocked senders.</li>
+          <li>Check Exchange connector health (hybrid only).</li>
+          <li>Run remote connectivity analyzer tests.</li>
+        </ol>
+        <div class="tagline">
+          <span class="chip">Common issue → SPF softfail</span>
+          <span class="chip">Fix → update DNS, revalidate</span>
+        </div>
+      </div>
+    </details>
+
+    <hr class="soft" />
+
+    <!-- M365 2: Teams Not Signing In -->
+    <details class="card">
+      <summary>
+        <div class="arrow"></div>
+        <div>M365 2. Troubleshooting Microsoft Teams authentication issues</div>
+      </summary>
+      <div class="answer">
+        <ol>
+          <li>
+            Check Azure AD sign-in logs for MFA/conditional access blocks.
+          </li>
+          <li>Clear Teams cache or reinstall local app.</li>
+          <li>Validate device compliance (Intune).</li>
+          <li>Review network proxy/firewall for Teams endpoints.</li>
+          <li>Check service status in Microsoft 365 Admin Center.</li>
+        </ol>
+        <div class="tagline">
+          <span class="chip">Teams issues = 75% auth or network</span>
+        </div>
+      </div>
+    </details>
+
+    <hr class="soft" />
+
+    <!-- M365 3: SharePoint/OneDrive Access Issues -->
+    <details class="card">
+      <summary>
+        <div class="arrow"></div>
+        <div>
+          M365 3. How do you troubleshoot SharePoint/OneDrive access or sync
+          issues?
+        </div>
+      </summary>
+      <div class="answer">
+        <ol>
+          <li>Check SharePoint site permissions & role groups.</li>
+          <li>Validate file-level permissions (unique permission blocks).</li>
+          <li>Check OneDrive sync client health & version.</li>
+          <li>Ensure correct tenant sign-in (multi-tenant issue common).</li>
+          <li>Inspect sensitivity labels or DLP policies blocking upload.</li>
+        </ol>
+        <div class="tagline">
+          <span class="chip"
+            >Users see “Access Denied”? → permission inheritance broken</span
+          >
+        </div>
+      </div>
+    </details>
+
+    <hr class="soft" />
+
+    <!-- M365 4: Intune Enrollment & Compliance -->
+    <details class="card">
+      <summary>
+        <div class="arrow"></div>
+        <div>M365 4. Troubleshooting Intune device enrollment & compliance</div>
+      </summary>
+      <div class="answer">
+        <ol>
+          <li>Verify user licensing (Intune + Azure AD P1).</li>
+          <li>Check device limits per user.</li>
+          <li>Inspect enrollment restrictions and compliance policies.</li>
+          <li>Confirm the device meets OS/hardware requirements.</li>
+          <li>Review MDM authority & Autopilot profile assignments.</li>
+        </ol>
+        <div class="tagline">
+          <span class="chip"
+            >Intune failures → 90% licensing or MDM conflicts</span
+          >
+        </div>
+      </div>
+    </details>
+
+    <!-- AD 1: User Authentication Issues -->
+    <details class="card">
+      <summary>
+        <div class="arrow"></div>
+        <div>AD 1. How do you troubleshoot domain login failures?</div>
+      </summary>
+      <div class="answer">
+        <ol>
+          <li>Check user account status (locked/disabled/expired password).</li>
+          <li>Verify network connectivity to domain controllers.</li>
+          <li>Review DC event logs for Kerberos/NTLM failures.</li>
+          <li>Check time synchronization (Kerberos requires <5 mins drift).</li>
+          <li>Inspect DNS SRV records for missing DC entries.</li>
+        </ol>
+        <div class="tagline">
+          <span class="chip">Time skew → instant authentication failures</span>
+        </div>
+      </div>
+    </details>
+
+    <hr class="soft" />
+
+    <!-- AD 2: Group Policy Not Applying -->
+    <details class="card">
+      <summary>
+        <div class="arrow"></div>
+        <div>AD 2. Troubleshooting GPO not applying</div>
+      </summary>
+      <div class="answer">
+        <ol>
+          <li>Run <code>gpresult /r</code> to see applied policies.</li>
+          <li>Check GPO link order & inheritance.</li>
+          <li>Verify security filtering & WMI filters.</li>
+          <li>Check SYSVOL replication (DFSR issues).</li>
+          <li>Ensure client can reach DC over SMB/LDAP/Kerberos.</li>
+        </ol>
+        <div class="tagline">
+          <span class="chip">SYSVOL replication = root of many GPO issues</span>
+        </div>
+      </div>
+    </details>
+
+    <hr class="soft" />
+
+    <!-- File Server Issues -->
+    <details class="card">
+      <summary>
+        <div class="arrow"></div>
+        <div>AD 3. Troubleshooting file share and NTFS permission issues</div>
+      </summary>
+      <div class="answer">
+        <ol>
+          <li>Check share permissions vs NTFS ACLs (lowest privilege wins).</li>
+          <li>Verify user group membership.</li>
+          <li>Inspect broken inheritance or explicit denies.</li>
+          <li>Check offline files and DFS namespace redirection.</li>
+          <li>Review file locks and open sessions.</li>
+        </ol>
+        <div class="tagline">
+          <span class="chip">Explicit DENY → overrides everything</span>
+        </div>
+      </div>
+    </details>
+
+    <hr class="soft" />
+
+    <!-- Print Services -->
+    <details class="card">
+      <summary>
+        <div class="arrow"></div>
+        <div>AD 4. How do you troubleshoot print server issues?</div>
+      </summary>
+      <div class="answer">
+        <ol>
+          <li>Restart print spooler and clear stuck jobs.</li>
+          <li>Update printer drivers and check compatibility.</li>
+          <li>Verify correct driver model (Type 3 preferred).</li>
+          <li>Check GPO-deployed printers for mapping issues.</li>
+          <li>Review print server event logs for queue corruption.</li>
+        </ol>
+        <div class="tagline">
+          <span class="chip">Printer issues = 70% spooler corruption</span>
+        </div>
+      </div>
+    </details>
+
+    <!-- Security 1 -->
+    <details class="card">
+      <summary>
+        <div class="arrow"></div>
+        <div>
+          Security 1. How do you respond to a suspicious login or MFA bypass
+          attempt?
+        </div>
+      </summary>
+      <div class="answer">
+        <ol>
+          <li>Review Azure AD sign-in logs for location/device anomalies.</li>
+          <li>Force password reset; revoke sessions.</li>
+          <li>Enable/verify MFA and Conditional Access baseline policies.</li>
+          <li>Check device compliance and remove unmanaged devices.</li>
+          <li>Review mailbox forwarding rules for suspicious activity.</li>
+        </ol>
+        <div class="tagline">
+          <span class="chip">Impossible travel = red flag</span>
+        </div>
+      </div>
+    </details>
+
+    <hr class="soft" />
+
+    <!-- Security 2 -->
+    <details class="card">
+      <summary>
+        <div class="arrow"></div>
+        <div>
+          Security 2. Troubleshooting Conditional Access blocking legitimate
+          users
+        </div>
+      </summary>
+      <div class="answer">
+        <ol>
+          <li>Check policy assignment scope and conditions.</li>
+          <li>Review “Grant” controls (e.g., MFA, device compliance).</li>
+          <li>Inspect sign-in logs for failed requirement.</li>
+          <li>Create temporary exclusion group for testing.</li>
+          <li>
+            Adjust or split policies using least privilege and least complexity.
+          </li>
+        </ol>
+        <div class="tagline">
+          <span class="chip">Always test CA policies in staging</span>
+        </div>
+      </div>
+    </details>
+
+    <!-- SEV1: Microsoft 365 Global Outage -->
+    <details class="card">
+      <summary>
+        <div class="arrow"></div>
+        <div>Scenario 1. SEV1 – Global Microsoft 365 outage handling</div>
+      </summary>
+      <div class="answer">
+        <ol>
+          <li>Check service health dashboard & Twitter/X engineering feed.</li>
+          <li>Confirm scope: global, regional, tenant-specific.</li>
+          <li>Communicate to leadership + clients with ETA and workaround.</li>
+          <li>Adjust workload routing where possible (e.g., cached mode).</li>
+          <li>Create master incident ticket & status page updates.</li>
+        </ol>
+        <div class="tagline">
+          <span class="chip">Communication = critical path</span>
+        </div>
+      </div>
+    </details>
+
+    <hr class="soft" />
+
+    <!-- SEV2: On-Prem AD Outage -->
+    <details class="card">
+      <summary>
+        <div class="arrow"></div>
+        <div>Scenario 2. Domain Controller failure or AD outage</div>
+      </summary>
+      <div class="answer">
+        <ol>
+          <li>Check DC services (NTDS, DNS, Netlogon).</li>
+          <li>Confirm SYSVOL/NETLOGON share availability.</li>
+          <li>
+            Check replication health (<code>repadmin /replsummary</code>).
+          </li>
+          <li>Verify event logs for USN rollback / tombstone issues.</li>
+          <li>Force replication or seize FSMO roles if necessary.</li>
+        </ol>
+      </div>
+    </details>
+
+    <hr class="soft" />
+
+    <!-- SEV3: Network Outage -->
+    <details class="card">
+      <summary>
+        <div class="arrow"></div>
+        <div>Scenario 3. Diagnosing complete network outage</div>
+      </summary>
+      <div class="answer">
+        <ol>
+          <li>Check firewall WAN state & ISP link quality.</li>
+          <li>Check whether DHCP/DNS services are down internally.</li>
+          <li>Isolate: WAN-only? LAN-only? Wi-Fi-only?</li>
+          <li>Check switching loops (STP blocking ports).</li>
+          <li>Identify problem device and isolate physically.</li>
+        </ol>
+      </div>
+    </details>
+
+    <!-- Ops 1 -->
+    <details class="card">
+      <summary>
+        <div class="arrow"></div>
+        <div>
+          Ops 1. How do you prevent recurring incidents across client
+          environments?
+        </div>
+      </summary>
+      <div class="answer">
+        <ol>
+          <li>Trend analysis of incidents → find patterns.</li>
+          <li>Convert repeat issues into automation runbooks.</li>
+          <li>Deploy improved monitoring to detect earlier.</li>
+          <li>Perform root cause analysis & document fixes.</li>
+          <li>Standardize configurations across all clients.</li>
+        </ol>
+        <div class="tagline">
+          <span class="chip">ITIL: Continual Improvement</span>
+        </div>
+      </div>
+    </details>
+
+    <hr class="soft" />
+
+    <!-- Ops 2 -->
+    <details class="card">
+      <summary>
+        <div class="arrow"></div>
+        <div>
+          Ops 2. Explain your approach to environment documentation at scale
+        </div>
+      </summary>
+      <div class="answer">
+        <ol>
+          <li>
+            Create documentation templates (network maps, AD structure, backup
+            plans).
+          </li>
+          <li>Document changes in real-time (ITIL Change Management).</li>
+          <li>Version-control documentation in SharePoint/Confluence.</li>
+          <li>Use diagrams (Visio / draw.io) for clarity.</li>
+          <li>Ensure onboarding/offboarding workflows documented.</li>
+        </ol>
+        <div class="tagline">
+          <span class="chip">Documentation saves hours</span>
+        </div>
+      </div>
+    </details>
+
+        <aside>
+          <h3>1-page Cram Sheet</h3>
+          <ul>
+            <li>
+              <strong>Login:</strong> User → Logs → CA → Compliance → Sync.
+            </li>
+            <li>
+              <strong>VM fail:</strong> Diagnostics → Metrics → Network →
+              Restore.
+            </li>
+            <li><strong>Storage:</strong> Health → Permissions → Throttle.</li>
+            <li><strong>Backup:</strong> Vault → Logs → Restore test.</li>
+            <li><strong>Network:</strong> NSG → UDR → Watcher.</li>
+          </ul>
+
+          <h3>Interview Notes</h3>
+          <ul>
+            <li>Proactive monitoring & automation.</li>
+            <li>ITIL flow (Incident → Problem → Change).</li>
+            <li>Agile/Lean process improvements.</li>
+          </ul>
+
+          <h3>Checklist</h3>
+          <ul>
+            <li>Isolate → Diagnose → Fix → Validate.</li>
+            <li>Communicate early.</li>
+            <li>Document everything.</li>
+          </ul>
+        </aside>
+      </div>
+      </div>
+  </div>
+  </body>
+</html>

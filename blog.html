@@ -1,47 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lets Talk IT</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Azure Troubleshooting Cue Cards — 14 Issues</title>
+    <link rel="stylesheet" href="blogstyle.css" />
   </head>
+
   <body>
-    <header class="hero">
-      <div class="hero-inner">
-        <h1>Coming Soon!</h1>
+    <div class="wrap">
+      <header>
+        <div class="logo">AZ</div>
+        <div>
+          <h1>Azure Troubleshooting Cue Cards — 14 Common Issues</h1>
+          <p>
+            Compact study guide with quick steps, ITIL & Agile notes, and a
+            printable cram sheet.
+          </p>
+        </div>
+      </header>
 
-        <p class="subtitle">
-<div class="construction">
-    <img src="images/under-construction.jpg" alt="under construction">
-</div>
-<h4>we will be talking about all topics of IT.</h4>
-<p>from the small things like "where to get started" to discussig controversial topics like dating Artifical Intelligence😱🫦</p>
+      <div class="grid">
+        <main>
+          <!-- CARD TEMPLATE EXAMPLE:
+        <details class="card">
+          <summary>
+            <div class="arrow"></div>
+            <div>Question</div>
+          </summary>
+          <div class="answer">...</div>
+        </details>
+        -->
 
-          <!--
-          Active work, completed projects and items in progress
-        </p>
+          <!-- 1 -->
+          <details class="card" open>
+            <summary>
+              <div class="arrow"></div>
+              <div>
+                1. What is Azure Active Directory, and how does it differ from
+                on-premises AD?
+              </div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>
+                  Azure AD is a cloud-based identity and access management
+                  service.
+                </li>
+                <li>
+                  On-prem AD manages devices and users locally using domain
+                  join, GPO, Kerberos.
+                </li>
+                <li>
+                  Azure AD supports SSO, MFA, Conditional Access, identity
+                  governance.
+                </li>
+              </ol>
+              <div class="tagline">
+                <span class="chip"
+                  >ITIL: Identity impacts availability & access</span
+                >
+                <span class="chip">Agile: iterative policy rollouts</span>
+              </div>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 2 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>2. How do you troubleshoot login issues in Azure AD?</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>
+                  Check user state: active, not blocked, password validity.
+                </li>
+                <li>
+                  Use sign-in logs to identify authentication or MFA failures.
+                </li>
+                <li>Review Conditional Access policy assignments.</li>
+                <li>Validate device compliance in Intune.</li>
+                <li>Check Azure AD Connect for sync errors.</li>
+                <li>Document and communicate resolution.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 3 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>
+                3. Explain Azure Resource Groups and why they are important
+              </div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Logical containers for Azure resources.</li>
+                <li>Enable RBAC, lifecycle control, cost management.</li>
+                <li>Support tagging, automation, structured deployments.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 4 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>4. How do you monitor Azure resources effectively?</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Azure Monitor dashboards and alerts.</li>
+                <li>Log Analytics for logs & trend analysis.</li>
+                <li>Application Insights for app telemetry.</li>
+                <li>Network Watcher for flow & connectivity monitoring.</li>
+                <li>Integrate alerts with ITSM for automated incidents.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 5 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>5. Troubleshooting a failing Azure VM</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Check VM state (Running/Stopped).</li>
+                <li>Check Boot Diagnostics for errors.</li>
+                <li>Review CPU, RAM, IOPS metrics.</li>
+                <li>Check NSG/firewall/IP config.</li>
+                <li>RDP/SSH and inspect OS logs.</li>
+                <li>Redeploy or restore from snapshot if needed.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 6 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>6. Implement Azure RBAC</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Identify least-privilege role needed.</li>
+                <li>Assign at correct scope (sub/resource group/resource).</li>
+                <li>Use groups, avoid individual assignments.</li>
+                <li>Test permissions.</li>
+                <li>Review regularly for stale permissions.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 7 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>7. Troubleshoot Azure Storage issues</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Check storage health and service status.</li>
+                <li>Validate firewall/VNet/private endpoints.</li>
+                <li>Verify keys/SAS/RBAC permissions.</li>
+                <li>Check for throttling/quota limits.</li>
+                <li>Test across clients & review logs.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 8 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>8. Troubleshoot Azure Backup failures</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Check Recovery Services Vault job status.</li>
+                <li>Review backup logs and error codes.</li>
+                <li>Validate storage and network connectivity.</li>
+                <li>Test restore to confirm integrity.</li>
+                <li>Adjust retention or schedule if needed.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 9 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>9. Troubleshoot Azure Networking</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Check IP, VNet, NSG, UDR configuration.</li>
+                <li>Use Network Watcher tools.</li>
+                <li>Ping/tracert + flow logs.</li>
+                <li>Fix misconfigured rules or routes.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 10 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>10. Troubleshoot hybrid Azure AD sync issues</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Check Azure AD Connect health & sync service.</li>
+                <li>Identify missing/duplicate attributes.</li>
+                <li>Fix AD objects or filtering.</li>
+                <li>Re-run sync and confirm.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 11 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>11. Troubleshoot Conditional Access / MFA issues</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Identify impacted apps/users.</li>
+                <li>Review sign-in logs for policy blocks.</li>
+                <li>Verify device compliance.</li>
+                <li>Reset MFA or adjust policy.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 12 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>12. Troubleshoot VM performance issues</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Review CPU/RAM/IOPS metrics.</li>
+                <li>Inspect OS resource usage.</li>
+                <li>Optimize apps & disk.</li>
+                <li>Scale VM size if necessary.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 13 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>13. Troubleshoot Azure SQL connectivity</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Check DB/server status.</li>
+                <li>Validate firewall/VNet rules.</li>
+                <li>Test from SSMS/Azure Data Studio.</li>
+                <li>Fix routing/IP/credentials issues.</li>
+              </ol>
+            </div>
+          </details>
+
+          <hr class="soft" />
+
+          <!-- 14 -->
+          <details class="card">
+            <summary>
+              <div class="arrow"></div>
+              <div>14. Prevent Azure outages proactively</div>
+            </summary>
+            <div class="answer">
+              <ol>
+                <li>Build dashboards & automated alerting.</li>
+                <li>Implement redundancy & geo-replication.</li>
+                <li>Review RBAC and policies regularly.</li>
+                <li>Test backups + DR plans.</li>
+                <li>Perform post-mortems and improve runbooks.</li>
+              </ol>
+            </div>
+          </details>
+        </main>
+
+        <aside>
+          <h3>1-page Cram Sheet</h3>
+          <ul>
+            <li>
+              <strong>Login:</strong> User → Logs → CA → Compliance → Sync.
+            </li>
+            <li>
+              <strong>VM fail:</strong> Diagnostics → Metrics → Network →
+              Restore.
+            </li>
+            <li><strong>Storage:</strong> Health → Permissions → Throttle.</li>
+            <li><strong>Backup:</strong> Vault → Logs → Restore test.</li>
+            <li><strong>Network:</strong> NSG → UDR → Watcher.</li>
+          </ul>
+
+          <h3>Interview Notes</h3>
+          <ul>
+            <li>Proactive monitoring & automation.</li>
+            <li>ITIL flow (Incident → Problem → Change).</li>
+            <li>Agile/Lean process improvements.</li>
+          </ul>
+
+          <h3>Checklist</h3>
+          <ul>
+            <li>Isolate → Diagnose → Fix → Validate.</li>
+            <li>Communicate early.</li>
+            <li>Document everything.</li>
+          </ul>
+        </aside>
       </div>
-    </header>
-
-    <main style="max-width: 900px; margin: 30px auto">
-      <section class="section">
-        <h2>Active Projects</h2>
-        <ul>
-          <li>Network Segmentation — In progress</li>
-          <li>Automation Rollout — Staging phase</li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <h2>Completed Projects</h2>
-        <ul>
-          <li>Endpoint Automation — Reduced build time 45%</li>
-          <li>SLA Stabilization — Improved compliance 18%</li>
-        </ul>
-      </section>
--->
-      <a href="index.html">← Back to Home</a>
-    </main>
+    </div>
   </body>
 </html>

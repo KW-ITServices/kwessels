@@ -7,13 +7,13 @@
 }
 
 body {
-    background: #F1F5F9; /* soft slate */
+    background: #09a5ff2f; /* soft slate */
     color: #1E293B; /* dark slate text */
     padding: 20px;
 }
 
 a {
-    color: #2563EB; /* modern primary blue */
+    color: #000000; /* modern primary blue */
     text-decoration: none;
 }
 
@@ -25,7 +25,7 @@ a:hover {
 .container {
     max-width: 1000px;
     margin: auto;
-    background: #FFFFFF;
+    background: #ffffff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,0.05); /* softer shadow */
@@ -44,7 +44,7 @@ a:hover {
 
 .subtitle {
     font-size: 14px;
-    color: #64748B; /* muted slate */
+    color: #000000; /* muted slate */
 }
 
 /* Columns */
@@ -71,17 +71,17 @@ a:hover {
 
 .section h2 {
     font-size: 22px;
-    border-left: 4px solid #2563EB; /* updated accent strip */
+    border-left: 4px solid #000000; /* updated accent strip */
     padding-left: 10px;
     margin-bottom: 15px;
-    color: #1E293B;
+    color: #000000;
 }
 
 /* Lists */
 ul {
     list-style-type: square;
     margin-left: 20px;
-    color: #1E293B;
+    color: #000000;
 }
 
 /* Job */
@@ -90,13 +90,13 @@ ul {
 }
 
 .job h3 {
-    color: #2563EB;
+    color: #000000;
     font-size: 18px;
 }
 
 .company {
     font-size: 14px;
-    color: #64748B;
+    color: #000000;
     display: block;
     margin-bottom: 10px;
 }
@@ -114,12 +114,12 @@ ul {
     background: #F8FAFC; /* soft card background */
     padding: 20px;
     border-radius: 8px;
-    border: 1px solid #CBD5E1; /* light slate border */
+    border: 1px solid #000000; /* light slate border */
     transition: 0.3s;
 }
 
 .card:hover {
-    background: #E3EEFF; /* soft blue hover */
+    background: #09a5ff2f; /* soft blue hover */
     transform: translateY(-5px);
 }
 

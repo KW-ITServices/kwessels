@@ -7,8 +7,8 @@
 }
 
 body {
-    background: #09a5ff2f; /* soft slate */
-    color: #1E293B; /* dark slate text */
+    background: #e4e4e47c; /* soft slate */
+    color: #000000; /* dark slate text */
     padding: 20px;
 }
 
@@ -28,7 +28,7 @@ a:hover {
     background: #ffffff;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.05); /* softer shadow */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.521); /* softer shadow */
 }
 
 /* Header */
@@ -39,11 +39,11 @@ a:hover {
 
 .header h1 {
     font-size: 32px;
-    color: #1E293B;
+    color: #000000bd;
 }
 
 .subtitle {
-    font-size: 14px;
+    font-size: 20px;
     color: #000000; /* muted slate */
 }
 
@@ -71,15 +71,22 @@ a:hover {
 
 .section h2 {
     font-size: 22px;
-    border-left: 4px solid #000000; /* updated accent strip */
+    border-left: 4px solid #002363; /* updated accent strip */
     padding-left: 10px;
     margin-bottom: 15px;
-    color: #000000;
+    color: #002363;
+    font: ;
 }
 
 /* Lists */
 ul {
-    list-style-type: square;
+    list-style-type: circle;
+    margin-left: 20px;
+    color: #000000e5;
+}
+
+ol {
+    list-style-type: "⭐";
     margin-left: 20px;
     color: #000000;
 }
@@ -96,7 +103,7 @@ ul {
 
 .company {
     font-size: 14px;
-    color: #000000;
+    color: #002363cc;
     display: block;
     margin-bottom: 10px;
 }
@@ -108,7 +115,7 @@ ul {
     flex-wrap: wrap;
 }
 
-.card {
+.card  {
     flex: 1;
     min-width: 250px;
     background: #F8FAFC; /* soft card background */
@@ -118,28 +125,23 @@ ul {
     transition: 0.3s;
 }
 
+.card h3    {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #002363;
+}
+
+
+
 .card:hover {
-    background: #09a5ff2f; /* soft blue hover */
+    background: #002363; /* dark blue hover */
     transform: translateY(-5px);
+    color: #ffffff;
 }
 
-/* Constructing Notice */
-.construction {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    padding: 20px;
-    text-align: center;
+.card a:hover {
+    color: #ffffff;
 }
-
-.construction img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    border-radius: 10px;
-}
-
 
 
 /* Responsive Layout */

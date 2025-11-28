@@ -3,63 +3,44 @@
 }
 .header p{
     text-align: right;
-    padding-right: 100px
+    padding-right: 15%;
 }
 
 .header{
-    border-style: solid;
     padding: 1%;
 }
 
 .hero {
-    overflow: auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 50px  ;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.089);
+    border-style: solid;
+
 }
 
-.contact, #contact-ahref{
-    float: left;
-    width: 30%;
-    text-align: right;
-    line-height: 0.25em;   
+h5:hover + .hero {
+    animation: glow 0.8s ease-in-out 0.2s forwards;
 }
+
+@keyframes glow {
+  0%   { box-shadow: 0 0 0px rgba(0, 0, 0, 0); }
+  100% { box-shadow: 0 0 12px rgb(0, 0, 0); }
+}
+
+
 
 .about {
-    text-align: left;
-    width: 60%;
-    float: right;
-    padding: 0 20px;
-    text-transform: capitalize;
+    padding: 0 2% 0 2%;
 }
 
-h5 {
-    letter-spacing: 7px;
-    text-align: center;
-}
+asdasdasd
 
-h5:hover {
-    color: black;
-    cursor: progress;
-    text-transform: uppercase;
-    letter-spacing: 10px;
-    font-size: 14px;
-    transition: 0.5s;
-}
+
 
 .public-profiles {
-    clear: both;
-    padding-top: 20px;
-    text-align: center;
+    text-align: right;
+    padding: 0% 15% 0% 10%;
 }
 
 ul{
-    display: inline;
-    margin: 0 15px;
-    list-style: square;
-}
-
-a {
-    text-decoration: none;
-    color: blue;
+    list-style: none;
 }

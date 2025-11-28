@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Yutiliti — Advanced Interview Prep (Networking, Systems, Troubleshooting)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap">
+<style>
+  :root{
+    --bg:#071026; --card:#0b1220; --muted:#9fb0c0; --accent:#22c1c3; --surface:#0d1622;
+    font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  html,body{height:100%;margin:0;background:linear-gradient(180deg,#041024 0%, #071026 100%);color:#e6eef6}
+  .container{max-width:1200px;margin:28px auto;padding:20px}
+  header{display:flex;gap:16px;align-items:center;margin-bottom:18px}
+  header h1{margin:0;font-size:20px}
+  header p{margin:0;color:var(--muted);font-size:13px}
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}
+  .tab{background:var(--surface);padding:8px 12px;border-radius:8px;cursor:pointer;border:1px solid rgba(255,255,255,0.02);color:var(--muted)}
+  .tab.active{background:linear-gradient(90deg, rgba(34,193,195,0.12), rgba(34,193,195,0.06));color:#eaffff;border:1px solid rgba(34,193,195,0.25)}
+  .panel{display:none;background:var(--card);padding:16px;border-radius:10px;box-shadow:0 8px 24px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.02)}
+  .panel.active{display:block}
+  h2{margin:6px 0 12px 0}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .card{background:rgba(255,255,255,0.02);padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.02)}
+  .q{font-weight:600;color:#dff7f6}
+  .a{color:#e1eef2;margin-top:8px;font-size:14px;line-height:1.45}
+  pre{background:#06121a;padding:12px;border-radius:8px;overflow:auto;color:#dfeff7}
+  .muted{color:var(--muted);font-size:13px}
+  ul{margin:8px 0 8px 18px}
+  .tag{display:inline-block;padding:4px 8px;border-radius:6px;background:rgba(255,255,255,0.02);font-size:12px;color:var(--accent);margin-right:6px}
+  .kbd{background:#03141a;padding:4px 6px;border-radius:4px;border:1px solid rgba(255,255,255,0.02)}
+  footer{margin-top:18px;color:var(--muted);font-size:13px}
+  @media (max-width:900px){.cols{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Yutiliti — Advanced Interview Prep</h1>
+        <p class="muted">Networking • Systems • Fibre • Troubleshooting • Yutiliti-specific scenarios</p>
+      </div>
+      <div style="margin-left:auto;text-align:right">
+        <div class="muted">Prepared for: <strong>Kyle Wessels</strong></div>
+        <div class="muted">Sources: Your CV and ITIL 4 cert referenced. :contentReference[oaicite:2]{index=2} :contentReference[oaicite:3]{index=3}</div>
+      </div>
+    </header>
+
+    <!-- Tabs -->
+    <div class="tabs" id="tabs">
+      <div class="tab active" data-tab="overview">Overview</div>
+      <div class="tab" data-tab="networking">Networking Theory</div>
+      <div class="tab" data-tab="topologies">Topologies & Types</div>
+      <div class="tab" data-tab="systems">Systems Administration</div>
+      <div class="tab" data-tab="fibre">Fibre & ISP Ops</div>
+      <div class="tab" data-tab="troubleshoot">Troubleshooting Library</div>
+      <div class="tab" data-tab="qa">Cue Cards (Q/A)</div>
+      <div class="tab" data-tab="scenarios">Scenario Playbooks</div>
+      <div class="tab" data-tab="yutiliti">Yutiliti Pack</div>
+    </div>
+
+    <!-- Panels -->
+    <section id="overview" class="panel active">
+      <h2>How to use this pack</h2>
+      <div class="cols">
+        <div class="card">
+          <h3 class="muted">Purpose</h3>
+          <p class="a">This multi-tab pack combines CompTIA Network+–aligned theory, practical system admin guidance, detailed troubleshooting steps for each Q/A, and Yutiliti-specific operational scenarios. Use the tabs to jump to topic areas, rehearse cue-cards, and study the troubleshooting library.</p>
+        </div>
+        <div class="card">
+          <h3 class="muted">Study flow</h3>
+          <ol class="muted">
+            <li>Scan the Networking Theory tab for concept refreshers.</li>
+            <li>Read Topologies & Types and Fibre tabs for ISP context.</li>
+            <li>Work through Troubleshooting Library and Cue Cards; rehearse answers aloud.</li>
+            <li>Use Scenario Playbooks for role-play and time-boxed responses.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="networking" class="panel">
+      <h2>Networking Theory (CompTIA Network+ aligned)</h2>
+
+      <div class="cols">
+        <div class="card">
+          <h3 class="muted">OSI Model — quick reference</h3>
+          <ul class="muted">
+            <li><strong>Layer 7 — Application:</strong> HTTP, SMTP, FTP, DNS.</li>
+            <li><strong>Layer 6 — Presentation:</strong> Encoding, encryption (TLS).</li>
+            <li><strong>Layer 5 — Session:</strong> Sessions, sockets.</li>
+            <li><strong>Layer 4 — Transport:</strong> TCP (reliable), UDP (fast).</li>
+            <li><strong>Layer 3 — Network:</strong> IP addressing, routing (IPv4/IPv6).</li>
+            <li><strong>Layer 2 — Data Link:</strong> MAC, Ethernet switching, VLANs, STP.</li>
+            <li><strong>Layer 1 — Physical:</strong> Cables, fibres, electrical/optical signals.</li>
+          </ul>
+          <p class="muted">Interview tip: When troubleshooting, identify the failing layer first — many ISP/home issues land in layers 1–3.</p>
+        </div>
+
+        <div class="card">
+          <h3 class="muted">TCP/IP Stack — mapping & essentials</h3>
+          <p class="a">Application → Transport → Internet → Link. Know the difference between TCP and UDP, and be able to explain TCP 3-way handshake and how NAT affects IP mapping for home/business routers.</p>
+          <pre>TCP handshake: SYN → SYN/ACK → ACK</pre>
+          <p class="muted">Interview tip: Explain how port forwarding works and why NAT is used for IPv4 scarcity.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:12px" class="cols">
+        <div class="card">
+          <h3 class="muted">Addressing & Subnetting</h3>
+          <p class="a">Understand IPv4 classes, CIDR notation, subnet masks, and the method to calculate network, broadcast, and host ranges. Know common subnets (/24 = 255.255.255.0, 254 hosts).</p>
+          <pre>Example: 192.168.1.0/24 → hosts 192.168.1.1 - 192.168.1.254</pre>
+          <p class="muted">Interview tip: Practice a few quick subnet math problems aloud (e.g., split /24 into /26s).</p>
+        </div>
+
+        <div class="card">
+          <h3 class="muted">Routing & Switching Basics</h3>
+          <ul class="muted">
+            <li><strong>Switching:</strong> MAC learning, VLANs, STP prevents loops.</li>
+            <li><strong>Routing:</strong> Static vs dynamic (OSPF, BGP basics).</li>
+            <li><strong>NAT:</strong> Source NAT for outbound translation; port forwarding for inbound services.</li>
+          </ul>
+          <p class="muted">Interview tip: Be ready to explain OSPF areas or BGP at a high level (why BGP is used between ASes).</p>
+        </div>
+      </div>
+
+      <div style="margin-top:12px" class="card">
+        <h3 class="muted">Key technologies & protocols</h3>
+        <ul class="muted">
+          <li>DHCP, DNS, ARP, ICMP (ping), SNMP (monitoring), NTP.</li>
+          <li>802.11 standards (a/b/g/n/ac/ax) — difference in bands, MIMO, channels.</li>
+          <li>VPN types — IPsec (site-to-site), SSL/TLS VPN (remote access).</li>
+          <li>Quality of Service (QoS) basics — prioritizing voice/critical traffic.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="topologies" class="panel">
+      <h2>Topologies & Network Types</h2>
+
+      <div class="cols">
+        <div class="card">
+          <h3 class="muted">Network Topologies (what they are & when to use)</h3>
+          <ul class="muted">
+            <li><strong>Star:</strong> Central switch/router — common in LANs. Pros: easy to isolate faults.</li>
+            <li><strong>Bus:</strong> Legacy, shared medium — rare now.</li>
+            <li><strong>Ring:</strong> Token ring historically; modern use in some carrier rings.</li>
+            <li><strong>Mesh:</strong> Highly redundant — used in WAN backbones or wireless mesh.</li>
+            <li><strong>Hybrid:</strong> Combination: practical for large enterprises.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 class="muted">Network Types</h3>
+          <ul class="muted">
+            <li><strong>LAN:</strong> Local area network (office/home).</li>
+            <li><strong>WAN:</strong> Wide area network — ISP/backbone links.</li>
+            <li><strong>MAN:</strong> Metropolitan (city-wide mesh/fibre).</li>
+            <li><strong>PAN:</strong> Personal (Bluetooth, USB tethering).</li>
+            <li><strong>CAN:</strong> Campus area network (multiple buildings).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top:12px" class="card">
+        <h3 class="muted">Fibre network fundamentals (intro)</h3>
+        <p class="a">Understand single-mode vs multimode fibre, attenuation, optical power budgets, and PON (Passive Optical Network) vs point-to-point fibre. PON is common for FTTH with splitters; ONT at customer premise converts optical to Ethernet.</p>
+      </div>
+    </section>
+
+    <section id="systems" class="panel">
+      <h2>Systems Administration</h2>
+
+      <div class="cols">
+        <div class="card">
+          <h3 class="muted">Active Directory & Identity</h3>
+          <p class="a">AD essentials: domain controllers, DNS integration, FSMO roles, OU design, Group Policy Objects (GPO) for patching/lockdown. Discuss account lifecycle (join/provision/deprovision) and replication concerns.</p>
+        </div>
+
+        <div class="card">
+          <h3 class="muted">Patch Management & Backups</h3>
+          <p class="a">Explain scheduled maintenance windows, test groups, cumulative update strategy, backup verification (restore tests), and recovery procedures. Reference ITIL change control for larger rollouts. (Your ITIL foundation supports this.) :contentReference[oaicite:4]{index=4}</p>
+        </div>
+      </div>
+
+      <div style="margin-top:12px" class="card">
+        <h3 class="muted">Monitoring & Observability</h3>
+        <p class="a">Discuss SNMP, syslog aggregation, synthetic checks, and SRE metrics (SLIs/SLOs). Explain setting alerts that are actionable to reduce alert fatigue and maintain MTTR improvements (you can cite examples from your experience). :contentReference[oaicite:5]{index=5}</p>
+      </div>
+    </section>
+
+    <section id="fibre" class="panel">
+      <h2>Fibre & ISP Operations (PON, ONT, Installer Playbook)</h2>
+
+      <div class="card">
+        <h3 class="muted">PON architecture</h3>
+        <p class="a">PON uses an OLT (Optical Line Terminal) at the provider, splitters in the field, and ONTs at customer sites. Understand optical power budgets, reflective losses at connectors, and the importance of testing with an OTDR or power meter during install.</p>
+      </div>
+
+      <div style="margin-top:12px" class="cols">
+        <div class="card">
+          <h3 class="muted">ONT vs Router</h3>
+          <p class="a">ONT converts light → Ethernet (Layer 1/2). Router handles WAN routing, NAT, DHCP, firewall. In troubleshooting, always isolate: test direct from ONT to laptop to eliminate router config issues.</p>
+        </div>
+
+        <div class="card">
+          <h3 class="muted">Installer checklist (practical)</h3>
+          <pre>
+1) Confirm service activation & provisioning in OSS.
+2) Check optical power (dBm) at termination point.
+3) Verify fiber connector cleanliness (inspect probe).
+4) Connect ONT, verify LOS/LOS alarm status.
+5) Test Ethernet link to router; verify WAN IP/DHCP or PPPoE.
+6) Perform speed test & document results.
+7) Update ticket with test logs and photos; handover to customer.
+          </pre>
+      </div>
+    </section>
+
+    <section id="troubleshoot" class="panel">
+      <h2>Troubleshooting Library — Methods & Steps</h2>
+
+      <div class="card">
+        <h3 class="muted">CompTIA 7-Step Troubleshooting + ITIL overlay</h3>
+        <ol class="muted">
+          <li><strong>Identify the problem:</strong> Gather symptoms, scope, timestamps.</li>
+          <li><strong>Duplicate the problem:</strong> Attempt to reproduce.</li>
+          <li><strong>Establish a theory:</strong> Map to OSI layers and likely causes.</li>
+          <li><strong>Test the theory:</strong> Use ping, traceroute, direct connect tests.</li>
+          <li><strong>Plan & implement solution:</strong> Apply the smallest invasive fix first.</li>
+          <li><strong>Verify full system operation:</strong> Confirm with speed tests, logs.</li>
+          <li><strong>Document & close:</strong> Update incident/problem record, RCA if required.</li>
+        </ol>
+        <p class="muted">Combine with ITIL: record communication, escalation, and change control if the fix requires system change.</p>
+      </div>
+
+      <div style="margin-top:12px" class="cols">
+        <div class="card">
+          <h3 class="muted">Common toolset & commands</h3>
+          <ul class="muted">
+            <li><kbd class="kbd">ping</kbd> — connectivity & RTT</li>
+            <li><kbd class="kbd">tracert / traceroute</kbd> — path & hop latency</li>
+            <li><kbd class="kbd">nslookup / dig</kbd> — DNS resolution</li>
+            <li><kbd class="kbd">ipconfig / ifconfig</kbd> — IP config</li>
+            <li><kbd class="kbd">netstat</kbd> — open connections</li>
+            <li>Optical tester: OTDR, power meter for fibre</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 class="muted">Example troubleshooting flows</h3>
+          <p class="a"><strong>Case A — "No internet but ONT light OK":</strong> 1) Direct connect laptop to ONT → check link; 2) Verify WAN IP assigned; 3) Check default gateway; 4) Ping gateway and public DNS (8.8.8.8); 5) If WAN IP missing, check ISP provisioning & OLT logs.</p>
+          <p class="a"><strong>Case B — "Intermittent Wi-Fi":</strong> 1) Check client RSSI and interference (2.4GHz crowded); 2) Test wired speeds; 3) Run Wi-Fi heatmap / channel scan; 4) Recommend channel change, relocate AP, or deploy mesh nodes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="qa" class="panel">
+      <h2>Cue Cards — Question & Answer with Troubleshooting Steps</h2>
+
+      <div class="card" style="margin-bottom:10px">
+        <h3 class="muted">Cue Card: "User can't log into domain"</h3>
+        <div class="q">Q</div>
+        <div class="a">
+          <strong>Answer summary:</strong> Check account status, network connectivity, DNS, time sync, and DC availability.<br/><br>
+          <strong>Troubleshooting steps:</strong>
+          <ol class="muted">
+            <li>Verify user credentials & check if account is locked/disabled.</li>
+            <li>Ask user to try on a different workstation to isolate endpoint vs account.</li>
+            <li>Confirm the workstation is joined to the domain.</li>
+            <li>Run <kbd class="kbd">nltest /dsgetdc:domainname</kbd> or <kbd>ping &lt;DC&gt;</kbd> to test DC reachability.</li>
+            <li>Validate DNS resolution: <kbd>nslookup domaincontroller</kbd>.</li>
+            <li>Check event viewer on DC for 4625/4771 events (authentication failure codes).</li>
+            <li>If needed, reset password or unlock account and test again; document actions and escalate if domain replication issues are suspected.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:10px">
+        <h3 class="muted">Cue Card: "Email not syncing (Microsoft 365)"</h3>
+        <div class="q">Q</div>
+        <div class="a">
+          <strong>Answer summary:</strong> Confirm license/provisioning, connectivity, and client config.<br/><br>
+          <strong>Troubleshooting steps:</strong>
+          <ol class="muted">
+            <li>Verify user license & mailbox existence in Azure AD / Exchange Online.</li>
+            <li>Check Outlook connectivity status (Work Offline mode, Cached Exchange Mode).</li>
+            <li>Test mailbox via Outlook Web Access (browser) to determine server vs client issue.</li>
+            <li>Run <kbd>Test-Mailflow</kbd> or use Microsoft Support & Recovery Assistant.</li>
+            <li>If client profile corrupt, recreate profile or clear local OST file.</li>
+            <li>Check network (firewall blocking ports) and DNS records (Autodiscover).</li>
+            <li>Document steps & escalate to Microsoft support if tenant-side issues persist.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:10px">
+        <h3 class="muted">Cue Card: "Intermittent connectivity (fibre customer)"</h3>
+        <div class="q">Q</div>
+        <div class="a">
+          <strong>Answer summary:</strong> Isolate physical layer (fibre/ONT), validate router, and check for upstream errors.<br/><br>
+          <strong>Troubleshooting steps:</strong>
+          <ol class="muted">
+            <li>Check ONT LEDs: LOS (loss of signal) indicates fibre issue.</li>
+            <li>Use power meter or check field OTDR logs if available to inspect optical levels.</li>
+            <li>Connect laptop directly to ONT to bypass router; test continuity and speed.</li>
+            <li>Collect router logs for WAN disconnects; check DHCP/PPPoE status.</li>
+            <li>Check for scheduled maintenance or upstream congestion via ISP status.</li>
+            <li>If physical fault suspected, dispatch field tech with splice/connector inspection checklist.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:10px">
+        <h3 class="muted">Cue Card: "Slow Wi-Fi in one room"</h3>
+        <div class="q">Q</div>
+        <div class="a">
+          <strong>Answer summary:</strong> Evaluate signal strength, interference, and channel utilization; recommend relocation or mesh extension.<br/><br>
+          <strong>Troubleshooting steps:</strong>
+          <ol class="muted">
+            <li>Check RSSI on client and AP (target RSSI &lt;-65 dBm for good signal).</li>
+            <li>Scan channels to find interference (neighbouring APs, microwaves).</li>
+            <li>Test speeds wired vs wireless to confirm local wireless problem.</li>
+            <li>Try changing channel or band (5GHz often less congested but shorter range).</li>
+            <li>If coverage issue, recommend repositioning AP or adding a mesh node/EXT.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:10px">
+        <h3 class="muted">Cue Card: "Service degraded (slow but up)"</h3>
+        <div class="q">Q</div>
+        <div class="a">
+          <strong>Answer summary:</strong> Identify if degradation is WAN or LAN, find heavy flows, and apply temporary QoS/limits while resolving root cause.<br/><br>
+          <strong>Troubleshooting steps:</strong>
+          <ol class="muted">
+            <li>Run speed tests from multiple endpoints and compare to package baseline.</li>
+            <li>Check for bulk transfers, backups, or malware on hosts causing saturation.</li>
+            <li>Monitor interface counters on router for errors, drops, CRCs (physical issues).</li>
+            <li>Check ISP side for packet loss via traceroute and MTR.</li>
+            <li>Apply rate limits or QoS class for business-critical apps while remediation is scheduled.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- add more cue cards as needed -->
+    </section>
+
+    <section id="scenarios" class="panel">
+      <h2>Scenario Playbooks — Timeboxed answers & actions</h2>
+
+      <div class="card" style="margin-bottom:10px">
+        <h3 class="muted">Scenario: "Enterprise customer — total outage" (2–5 minute opening)</h3>
+        <div class="a">
+          <strong>Interview approach (what to say):</strong> "I would triage impact, confirm scope, isolate the layer, and keep stakeholders informed. Immediate remediation is focused on service restoration; post-incident we’d run RCA to prevent recurrence." <br/><br>
+          <strong>Playbook (practical steps):</strong>
+          <ol class="muted">
+            <li>Confirm impact with customer: services affected & business risk.</li>
+            <li>Check ONT/OLT, power, and fibre alarms (LOS/LOP).</li>
+            <li>Test direct connectivity from ONT; if WAN is down, request upstream status and escalate to NOC.</li>
+            <li>Open incident ticket, assign owner, and provide 15-minute updates until restored.</li>
+            <li>After restoration, raise problem ticket for RCA; propose permanent fix & change plan.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:10px">
+        <h3 class="muted">Scenario: "Multiple customers report duplex mismatch symptoms"</h3>
+        <div class="a">
+          <strong>Interview approach:</strong> Explain duplex mismatch and how you'd detect (errors, high collisions historically), and correct config mismatches or replace faulty NICs/switch ports.<br/><br>
+          <strong>Playbook:</strong>
+          <ol class="muted">
+            <li>Collect interface stats: errors, late collisions, CRCs.</li>
+            <li>Check switch & endpoint port settings (auto vs forced). Prefer auto/auto but match where required.</li>
+            <li>Validate cable standard (Cat5e/6 for gigabit) and safe SFP modules for fibre.</li>
+            <li>Replace cable/port and monitor for persistent errors; document remediation.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="yutiliti" class="panel">
+      <h2>Yutiliti-Specific Pack — Tailored talking points & questions</h2>
+
+      <div class="card" style="margin-bottom:10px">
+        <h3 class="muted">Company-aligned pitch (casual)</h3>
+        <p class="a">"I combine hands-on networking and systems experience with field operations and customer service. I’m comfortable performing installs, validating fibre optical parameters, and troubleshooting ONT/router handoffs while keeping customers informed. My background in standardising processes and improving SLAs (see my CV) makes me a good fit for a service-first ISP." :contentReference[oaicite:6]{index=6}</p>
+      </div>
+
+      <div class="card" style="margin-bottom:10px">
+        <h3 class="muted">Yutiliti-targeted technical questions (likely)</h3>
+        <ul class="muted">
+          <li><strong>Explain the install: ONT, router, test steps.</strong> — Give the installer checklist and sample optical/power values to test.</li>
+          <li><strong>How to verify service provisioning:</strong> — Show how you validate DHCP/PPPoE, check OSS/Provisioning records, and confirm CPE receives correct profile.</li>
+          <li><strong>How to handle an escalated SLA breach:</strong> — Explain communication cadence, temporary mitigation, and RCA plan.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-bottom:10px">
+        <h3 class="muted">Practical notes to mention in interview</h3>
+        <ul class="muted">
+          <li>Mention you hold ITIL® 4 Foundation and align operations to ITIL practices for incident/change/problem management. :contentReference[oaicite:7]{index=7}</li>
+          <li>Highlight field & service delivery experience from your CV — scheduling, documentation, and SLA improvements. :contentReference[oaicite:8]{index=8}</li>
+          <li>If asked about customer comms, provide a short script for pre-install and post-install messaging (e.g., expected downtime, test results, contact details).</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="muted">Questions to ask them (good ones)</h3>
+        <ul class="muted">
+          <li>How do you measure install quality and technician success?</li>
+          <li>What’s your escalation path for fibre/ONT faults beyond field techs?</li>
+          <li>Do you maintain internal OSS/CRM dashboards for provisioning & outages?</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div class="muted">End of pack. For shorter printable flashcards or a downloadable PDF, I can convert this HTML into that format on request.</div>
+    </footer>
+  </div>
+
+<script>
+  // Tab switching
+  document.querySelectorAll('.tab').forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

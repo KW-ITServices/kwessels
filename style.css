@@ -143,6 +143,12 @@ ol {
     color: #ffffff;
 }
 
+video {
+    width: auto;
+    height: 10%;
+    overflow: hidden;
+    margin: 20px auto;
+}
 
 /* Responsive Layout */
 @media (max-width: 900px) {
@@ -171,3 +177,4 @@ ol {
         padding: 20px;
     }
 }
+
